@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CroustiAir – Recettes Air Fryer, magasins et prix</title>
+<meta name="description" content="19 recettes Air Fryer faciles, intermédiaires et avancées : poulet, bœuf, poisson, végétal, desserts et pâtisserie. Où acheter chaque produit et combien ça coûte. Installable comme une appli.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#d9480f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a120d" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CroustiAir">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CroustiAir – Recettes Air Fryer">
+<meta property="og:description" content="Des recettes croustillantes, les magasins où acheter et les prix. Installable comme une appli.">
+<meta property="og:locale" content="fr_FR">
+<style>
+:root{
+  --bg:#fff8f0;--bg-glass:rgba(255,248,240,.86);--surface:#ffffff;--surface2:#fdeedd;
+  --ink:#2b1b12;--muted:#6b5546;--line:#f0dccb;
+  --accent:#d9480f;--accent-ink:#ffffff;--accent-soft:#ffe8d6;--accent-text:#c2410c;
+  --green:#2b8a3e;--amber:#e67700;--red:#c92a2a;
+  --shadow:0 12px 30px -14px rgba(120,50,10,.35);--radius:22px;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#1a120d;--bg-glass:rgba(26,18,13,.86);--surface:#251912;--surface2:#31211a;
+    --ink:#fbeee2;--muted:#c9ae9b;--line:#3d2b20;
+    --accent:#ff8a3d;--accent-ink:#1a0d05;--accent-soft:#3f2414;--accent-text:#ff9f5c;
+    --green:#69db7c;--amber:#ffc078;--red:#ff8787;
+    --shadow:0 12px 30px -14px rgba(0,0,0,.7);
+  }
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0;letter-spacing:-.01em}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:10px}
+section[id],main[id]{scroll-margin-top:76px}
+.wrap{width:min(1120px,100% - 2rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--accent-ink);padding:.6rem 1rem;border-radius:12px;z-index:100;font-weight:700}
+.skip:focus{left:8px}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:0 1.1rem;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:650;text-decoration:none;white-space:nowrap;transition:transform .15s,box-shadow .15s}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.btn-light{background:#fff;color:#7c2d12;border-color:transparent}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.65)}
+.count{min-width:1.45rem;height:1.45rem;padding:0 .35rem;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:.78rem;font-weight:700;display:inline-grid;place-items:center}
+
+/* En-tête */
+.top{position:sticky;top:0;z-index:30;background:var(--bg-glass);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.top .wrap{display:flex;align-items:center;gap:.6rem;min-height:64px}
+.brand{display:flex;align-items:center;gap:.55rem;text-decoration:none;font-family:var(--serif);font-weight:800;font-size:1.3rem}
+.brand svg{width:34px;height:34px;flex:none}
+.nav{display:none;gap:1.4rem;margin-left:1.4rem}
+.nav a{text-decoration:none;font-weight:600;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.spacer{flex:1}
+@media (min-width:820px){.nav{display:flex}}
+@media (max-width:560px){.hide-sm{display:none}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;padding:3rem 0 4.2rem;border-radius:0 0 38px 38px;background:radial-gradient(120% 90% at 90% 0%,#ff922b 0%,rgba(255,146,43,0) 58%),linear-gradient(165deg,#d9480f 0%,#7c2d12 100%)}
+.eyebrow{display:inline-flex;align-items:center;gap:.4rem;padding:.38rem .85rem;border-radius:999px;background:rgba(255,255,255,.17);font-weight:650;font-size:.86rem}
+.hero h1{font-size:clamp(2.35rem,9vw,4.4rem);max-width:13ch;margin:1rem 0 .9rem;font-weight:800}
+.hero .sub{font-size:clamp(1.05rem,3.8vw,1.28rem);max-width:44ch;opacity:.96}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.7rem 0 1.5rem}
+.stats{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:0;padding:0;list-style:none;font-weight:650;font-size:.95rem}
+.stats li{display:flex;align-items:center;gap:.4rem}
+.floaties{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.floaties span{position:absolute;font-size:var(--s,3rem);opacity:.22;animation:float 7s ease-in-out infinite;animation-delay:var(--d,0s);filter:drop-shadow(0 10px 14px rgba(0,0,0,.25))}
+.floaties span:nth-child(1){right:6%;top:10%;--s:4.2rem}
+.floaties span:nth-child(2){right:26%;top:56%;--s:3rem;--d:-2s}
+.floaties span:nth-child(3){right:2%;top:58%;--s:3.6rem;--d:-4s}
+.floaties span:nth-child(4){right:30%;top:6%;--s:2.6rem;--d:-1s}
+.floaties span:nth-child(5){right:14%;top:78%;--s:2.8rem;--d:-3s}
+@media (min-width:820px){.floaties span{opacity:.9}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(5deg)}}
+
+/* Sections */
+.section{padding:3.2rem 0}
+.section h2{font-size:clamp(1.8rem,5.5vw,2.6rem)}
+.lead{color:var(--muted);max-width:62ch;margin-top:.6rem}
+.eyebrow-dark{display:inline-block;font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);margin-bottom:.5rem}
+
+/* Filtres */
+.controls{display:grid;gap:.95rem;margin:1.6rem 0 1.3rem}
+.search{position:relative}
+.search input{width:100%;min-height:50px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);padding:0 1.2rem 0 2.9rem;font:inherit}
+.search input::placeholder{color:var(--muted)}
+.search .ico{position:absolute;left:1.05rem;top:50%;transform:translateY(-50%);pointer-events:none}
+.chips{display:flex;gap:.5rem;overflow-x:auto;padding:4px 2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:0 1.05rem;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:650;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.row2{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.6rem}
+.ctl{display:flex;flex-direction:column;gap:.3rem}
+.ctl-label{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:750}
+.seg{display:inline-flex;background:var(--surface2);border-radius:999px;padding:4px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;min-height:40px;padding:0 .95rem;border-radius:999px;font-weight:650;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 5px rgba(0,0,0,.2)}
+.hint{font-size:.88rem;color:var(--muted)}
+.resultbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem;color:var(--muted);font-weight:600}
+
+/* Cartes recettes */
+.grid{display:grid;gap:1.15rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr))}
+.card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+@media (hover:hover){.card:hover{transform:translateY(-5px)}}
+.vis{position:relative;height:150px;display:grid;place-items:center;background:var(--g,linear-gradient(135deg,#ffc078,#f76707))}
+[data-cat=poulet]{--g:linear-gradient(135deg,#ffd43b 0%,#f76707 100%)}
+[data-cat=boeuf]{--g:linear-gradient(135deg,#e8590c 0%,#7f1d1d 100%)}
+[data-cat=poisson]{--g:linear-gradient(135deg,#74c0fc 0%,#1864ab 100%)}
+[data-cat=vegetal]{--g:linear-gradient(135deg,#b2f2bb 0%,#2b8a3e 100%)}
+[data-cat=dessert]{--g:linear-gradient(135deg,#ffa8a8 0%,#c2255c 100%)}
+.vis .em{font-size:4.2rem;filter:drop-shadow(0 8px 10px rgba(0,0,0,.28))}
+.vis .badge{position:absolute;left:12px;bottom:12px}
+.badge{display:inline-flex;align-items:center;gap:.42rem;padding:.28rem .7rem;border-radius:999px;background:var(--surface);color:var(--ink);font-size:.8rem;font-weight:750}
+.badge i{width:.62rem;height:.62rem;border-radius:50%;background:var(--c)}
+.lv1{--c:var(--green)}.lv2{--c:var(--amber)}.lv3{--c:var(--red)}
+.body{display:flex;flex-direction:column;gap:.5rem;padding:1rem 1.1rem 1.2rem;flex:1}
+.catlabel{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:750;color:var(--accent-text)}
+.title-btn{all:unset;cursor:pointer;font-family:var(--serif);font-size:1.32rem;font-weight:750;line-height:1.2}
+.title-btn::after{content:"";position:absolute;inset:0;z-index:1}
+.title-btn:focus-visible::after{outline:3px solid var(--accent);outline-offset:-3px;border-radius:var(--radius)}
+.body p{color:var(--muted);font-size:.95rem}
+.meta{display:flex;flex-wrap:wrap;gap:.3rem .9rem;font-size:.88rem;font-weight:600}
+.price{margin-top:auto;padding-top:.5rem;font-weight:800;color:var(--accent-text)}
+.price small{font-weight:600;color:var(--muted)}
+.fav{position:absolute;top:10px;right:10px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.93);color:#6b5546;font-size:1.35rem;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.fav[aria-pressed="true"]{color:#e03131}
+.empty{text-align:center;padding:3rem 1rem;color:var(--muted)}
+.empty .big{font-size:3rem}
+.empty h3{color:var(--ink);margin:.5rem 0}
+
+/* Magasins */
+.stores{background:var(--surface2);border-radius:38px;padding:3.2rem 0;margin:1rem 0}
+.store-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));margin-top:1.6rem}
+.store-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.55rem}
+.store-top{display:flex;align-items:center;gap:.8rem}
+.store-ico{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;background:var(--accent-soft)}
+.store-card h3{font-size:1.2rem}
+.tag{display:inline-block;padding:.15rem .6rem;border-radius:999px;background:var(--accent-soft);color:var(--accent-text);font-size:.78rem;font-weight:700}
+.store-card p{color:var(--muted);font-size:.93rem}
+.store-card .store-count{margin-top:auto;font-weight:700;color:var(--ink);font-size:.88rem}
+
+/* Installation */
+.install-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));margin-top:1.6rem}
+.install-card{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:1.2rem}
+.install-card.mine{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.install-card h3{font-size:1.2rem;margin-bottom:.5rem}
+.install-card ol{margin:0;padding-left:1.2rem;color:var(--muted)}
+.install-card li{margin:.25rem 0}
+.install-cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-top:1.4rem}
+.ok-msg{font-weight:700;color:var(--green)}
+
+footer{padding:2.5rem 0 calc(3rem + env(safe-area-inset-bottom));color:var(--muted);font-size:.9rem}
+footer .wrap{display:grid;gap:.6rem}
+footer strong{color:var(--ink)}
+
+/* Dialogues */
+dialog{border:0;padding:0;background:var(--bg);color:var(--ink);border-radius:28px;width:min(760px,calc(100% - 2rem));max-width:none;max-height:calc(100dvh - 2rem);box-shadow:0 30px 80px -20px rgba(0,0,0,.55);overscroll-behavior:contain}
+dialog::backdrop{background:rgba(25,12,5,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+dialog[open]{animation:pop .26s ease}
+@keyframes pop{from{opacity:0;transform:translateY(18px)}}
+@media (max-width:640px){dialog{width:100%;margin:auto 0 0;border-radius:26px 26px 0 0;max-height:93dvh}}
+.close{position:sticky;top:12px;z-index:6;display:grid;place-items:center;width:44px;height:44px;margin:12px 12px -56px auto;border-radius:50%;border:0;background:rgba(255,255,255,.96);color:#2b1b12;font-size:1.3rem;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.sheet-vis{height:190px;display:grid;place-items:center;background:var(--g)}
+.sheet-vis span{font-size:5.6rem;filter:drop-shadow(0 10px 14px rgba(0,0,0,.3))}
+.sheet-body{padding:1.3rem 1.4rem 1.6rem;display:grid;gap:1.3rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+.sheet-body h2{font-size:clamp(1.7rem,6vw,2.2rem)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+@media (min-width:560px){.facts{grid-template-columns:repeat(4,1fr)}}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:.7rem .9rem}
+.fact small{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
+.fact b{font-size:1.1rem}
+.note{background:var(--accent-soft);border-radius:14px;padding:.6rem .9rem;font-weight:600;font-size:.92rem}
+.sec-title{font-size:1.35rem;margin-bottom:.7rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem}
+.ing-list{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+.ing{display:grid;grid-template-columns:1fr auto;gap:.1rem .8rem;padding:.7rem .9rem;border-radius:16px;background:var(--surface);border:1px solid var(--line);align-items:center}
+.ing small{display:block;color:var(--muted)}
+.ing .where{text-align:right;font-weight:700}
+.ing .where small{color:var(--accent-text);font-weight:700}
+.total{margin-top:.8rem;font-size:1.05rem}
+.total small{display:block;color:var(--muted);margin-top:.2rem}
+.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:.8rem}
+.steps li{counter-increment:s;position:relative;padding-left:2.9rem;min-height:2.1rem}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800}
+.tip{border-left:5px solid var(--accent);background:var(--accent-soft);padding:.85rem 1rem;border-radius:0 16px 16px 0}
+.actions{position:sticky;bottom:0;z-index:5;display:flex;flex-wrap:wrap;gap:.6rem;padding:.9rem 1.4rem calc(.9rem + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line)}
+.actions .btn{flex:1 1 150px}
+.list-head{padding:1.4rem 1.4rem .4rem;display:grid;gap:.8rem}
+.list-head h2{font-size:1.8rem;padding-right:3.4rem}
+.list-body{padding:.6rem 1.4rem 1rem;display:grid;gap:1.2rem}
+.pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.pill{display:inline-flex;align-items:center;gap:.45rem;padding:.25rem .3rem .25rem .8rem;border-radius:999px;background:var(--surface2);font-weight:600;font-size:.9rem}
+.pill button{border:0;width:30px;height:30px;border-radius:50%;background:var(--surface);display:grid;place-items:center}
+.store-group h3{font-size:1.15rem;display:flex;justify-content:space-between;gap:1rem;margin-bottom:.4rem}
+.store-group h3 small{font-family:var(--sans);font-weight:700;color:var(--accent-text);font-size:.95rem}
+.store-group ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.store-group li{display:flex;justify-content:space-between;align-items:center;gap:.8rem;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.35rem .8rem .35rem .4rem}
+.store-group label{display:flex;gap:.6rem;align-items:center;min-height:44px;flex:1;cursor:pointer}
+.store-group input{width:22px;height:22px;accent-color:var(--accent);flex:none}
+.store-group small{display:block;color:var(--muted)}
+.store-group li.done label span{text-decoration:line-through;opacity:.55}
+.store-group li>span{font-weight:700;white-space:nowrap}
+.toast{inset:auto auto calc(1.4rem + env(safe-area-inset-bottom)) 50%;margin:0;transform:translateX(-50%);border:0;background:var(--ink);color:var(--bg);padding:.75rem 1.2rem;border-radius:999px;font-weight:650;box-shadow:0 10px 30px rgba(0,0,0,.4);max-width:calc(100% - 2rem);text-align:center}
+noscript p{padding:1rem;text-align:center;font-weight:700}
+</style>
+</head>
+<body>
+<a class="skip" href="#recettes">Aller aux recettes</a>
+<noscript><p>CroustiAir a besoin de JavaScript pour afficher les recettes.</p></noscript>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="CroustiAir, accueil">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#c2410c"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#lg)"/><circle cx="27" cy="32" r="15" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="27" cy="32" r="7.5" fill="#fff" fill-opacity=".9"/><rect x="41" y="29" width="14" height="6" rx="3" fill="#fff"/></svg>
+      <span>CroustiAir</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#recettes">Recettes</a><a href="#magasins">Où acheter</a><a href="#installer">Installer</a>
+    </nav>
+    <span class="spacer"></span>
+    <button class="btn btn-primary" type="button" id="installBtn" data-install>📲 <span>Installer</span></button>
+    <button class="btn" type="button" id="listBtn" aria-haspopup="dialog">🛒 <span class="hide-sm">Ma liste</span> <span class="count" id="listCount" aria-label="recettes dans la liste">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="floaties" aria-hidden="true"><span>🍗</span><span>🥩</span><span>🍪</span><span>🥦</span><span>🐟</span></div>
+    <div class="wrap" style="position:relative">
+      <span class="eyebrow">🔥 100 % Air Fryer · 0 friture</span>
+      <h1 id="h1">Le croustillant, sans la friture.</h1>
+      <p class="sub">Des recettes testées pour tous les niveaux, avec <strong>où acheter chaque produit</strong> et <strong>combien ça coûte</strong>. De la cuisine du quotidien à la pâtisserie.</p>
+      <div class="hero-cta">
+        <a class="btn btn-light" href="#recettes">Voir les recettes</a>
+        <button class="btn btn-outline-light" type="button" data-install>📲 Installer l’appli</button>
+      </div>
+      <ul class="stats" aria-label="Chiffres clés">
+        <li>🍽️ <span id="statRecipes">19</span> recettes</li>
+        <li>🎚️ 3 niveaux</li>
+        <li>🏪 12 types de magasins</li>
+        <li>💶 Prix indicatifs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="recettes" aria-labelledby="h-recettes">
+    <div class="wrap">
+      <span class="eyebrow-dark">Les recettes</span>
+      <h2 id="h-recettes">Qu’est-ce qu’on cuisine aujourd’hui ?</h2>
+      <p class="lead"><b>Facile</b> : quelques minutes de préparation. <b>Intermédiaire</b> : une technique simple (panure, marinade). <b>Avancé</b> : plusieurs étapes ou du repos.</p>
+
+      <div class="controls">
+        <label class="search"><span class="ico" aria-hidden="true">🔎</span>
+          <input id="q" type="search" placeholder="Chercher : poulet, brownie, tofu…" autocomplete="off" aria-label="Rechercher une recette">
+        </label>
+        <div class="chips" id="catChips" role="group" aria-label="Catégories"></div>
+        <div class="row2">
+          <div class="ctl"><span class="ctl-label" id="lvLabel">Niveau</span>
+            <div class="seg" role="group" aria-labelledby="lvLabel">
+              <button type="button" data-level="0">Tous</button>
+              <button type="button" data-level="1">Facile</button>
+              <button type="button" data-level="2">Intermédiaire</button>
+              <button type="button" data-level="3">Avancé</button>
+            </div>
+          </div>
+          <div class="ctl"><span class="ctl-label" id="tierLabel">Gamme de produits</span>
+            <div class="seg" role="group" aria-labelledby="tierLabel">
+              <button type="button" data-tier="m">💸 Malin</button>
+              <button type="button" data-tier="p">⭐ Premium</button>
+            </div>
+          </div>
+          <div class="ctl"><span class="ctl-label" id="favLabel">Favoris</span>
+            <div class="seg" role="group" aria-labelledby="favLabel"><button type="button" id="favToggle" aria-pressed="false">♥ Mes favoris</button></div>
+          </div>
+        </div>
+        <p class="hint"><b>Malin</b> : grandes surfaces et discount, bon rapport qualité-prix. <b>Premium</b> : produits de qualité (Label Rouge, bio, artisans).</p>
+      </div>
+
+      <div class="resultbar" role="status" aria-live="polite"><span id="count"></span></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="stores" id="magasins" aria-labelledby="h-mag">
+    <div class="wrap">
+      <span class="eyebrow-dark">Où acheter</span>
+      <h2 id="h-mag">Les bons magasins pour chaque produit</h2>
+      <p class="lead">Chaque recette indique le magasin conseillé pour chaque ingrédient, en gamme Malin et en gamme Premium. Voici à quoi sert chaque enseigne.</p>
+      <div class="store-grid" id="storeGrid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="installer" aria-labelledby="h-inst">
+    <div class="wrap">
+      <span class="eyebrow-dark">Appli gratuite</span>
+      <h2 id="h-inst">Installe CroustiAir sur ton écran d’accueil</h2>
+      <p class="lead">Pas de store, pas de compte : l’appli s’installe depuis ce site, s’ouvre en plein écran et fonctionne même sans réseau.</p>
+      <div class="install-grid">
+        <article class="install-card" data-os="android"><h3>🤖 Android (Chrome)</h3><ol><li>Appuie sur « Installer l’appli ».</li><li>Ou ouvre le menu ⋮ puis « Installer l’application ».</li><li>Confirme : l’icône arrive sur ton écran d’accueil.</li></ol></article>
+        <article class="install-card" data-os="ios"><h3>🍎 iPhone / iPad (Safari)</h3><ol><li>Ouvre le site dans <b>Safari</b>.</li><li>Appuie sur Partager (carré avec une flèche).</li><li>Choisis « Sur l’écran d’accueil », puis « Ajouter ».</li></ol></article>
+        <article class="install-card" data-os="desktop"><h3>💻 Ordinateur (Chrome, Edge)</h3><ol><li>Clique sur « Installer l’appli ».</li><li>Ou sur l’icône d’installation, à droite de la barre d’adresse.</li><li>L’appli s’ouvre dans sa propre fenêtre.</li></ol></article>
+      </div>
+      <div class="install-cta">
+        <button class="btn btn-primary" type="button" data-install>📲 Installer l’appli</button>
+        <span class="ok-msg" id="installedMsg" hidden>✓ L’appli est déjà installée sur cet appareil.</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>CroustiAir</strong> · recettes pour Air Fryer, avec magasins et prix.</p>
+    <p>Prix indicatifs : estimations moyennes en France (2026), correspondant au produit acheté en entier (paquet, boîte…). Ils varient selon l’enseigne, la région et les promotions. Le site n’est affilié à aucune enseigne. Base placard supposée : sel, poivre, huile.</p>
+    <p>Sécurité : volaille cuite à 74 °C à cœur, porc à 63 °C. Vérifie les allergènes sur les emballages. Les temps de cuisson varient selon les appareils : surveille la première fois.</p>
+    <p>Aucune donnée personnelle n’est collectée : tes favoris et ta liste restent sur ton appareil.</p>
+  </div>
+</footer>
+
+<dialog id="sheet" aria-labelledby="sheetTitle"><div id="sheetInner"></div></dialog>
+
+<dialog id="listDlg" aria-labelledby="listTitle">
+  <button class="close" type="button" data-close aria-label="Fermer">✕</button>
+  <div class="list-head">
+    <h2 id="listTitle">Ma liste de courses</h2>
+    <div class="ctl"><span class="ctl-label" id="tierLabel2">Gamme de produits</span>
+      <div class="seg" role="group" aria-labelledby="tierLabel2"><button type="button" data-tier="m">💸 Malin</button><button type="button" data-tier="p">⭐ Premium</button></div>
+    </div>
+  </div>
+  <div class="list-body" id="listBody"></div>
+  <div class="actions" id="listFoot">
+    <span style="flex:1 1 100%;font-weight:800;font-size:1.1rem">Total estimé : <span id="listTotal"></span></span>
+    <button class="btn" type="button" id="copyList">📋 Copier la liste</button>
+    <button class="btn" type="button" id="clearList">🗑️ Vider</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" popover="manual" role="status" aria-live="polite" hidden></div>
+
+<script>
+(function(){
+/*DATA_START*/
+const CATS=[
+  {id:"poulet",label:"Poulet",emoji:"🍗"},
+  {id:"boeuf",label:"Bœuf & porc",emoji:"🥩"},
+  {id:"poisson",label:"Poisson",emoji:"🐟"},
+  {id:"vegetal",label:"Végétal",emoji:"🥦"},
+  {id:"dessert",label:"Desserts & pâtisserie",emoji:"🍪"}
+];
+const LEVELS={1:"Facile",2:"Intermédiaire",3:"Avancé"};
+const STORES={
+  "Lidl":{emoji:"🛒",type:"Malin",desc:"Viandes fraîches, tofu, conserves et fruits et légumes à petit prix : la meilleure porte d’entrée pour cuisiner malin."},
+  "Aldi":{emoji:"🏷️",type:"Malin",desc:"Épicerie et pâtisserie de base à prix serrés : farine, beurre, épices, moutarde."},
+  "Leclerc":{emoji:"🏬",type:"Hypermarché",desc:"Grand choix et prix compétitifs : chapelure, épices, chocolat pâtissier, sauces."},
+  "Carrefour":{emoji:"🛍️",type:"Hyper & proximité",desc:"Partout en France, avec drive et livraison : œufs, féculents, steaks, sauces."},
+  "Intermarché":{emoji:"🧺",type:"Hypermarché",desc:"Un hypermarché pratique pour compléter les courses de viande et de produits frais."},
+  "Picard":{emoji:"🧊",type:"Surgelés",desc:"Poisson, légumes et préparations surgelés, toujours sous la main."},
+  "Grand Frais":{emoji:"🥬",type:"Frais & qualité",desc:"Produits frais de saison, fromages, viandes et volailles de qualité."},
+  "Biocoop":{emoji:"🌱",type:"Bio & vrac",desc:"Tofu, épices, farines et œufs bio ou plein air, avec un bon choix de vrac."},
+  "Monoprix":{emoji:"🏙️",type:"Centre-ville",desc:"Gamme gourmet : chocolat, sauces et épicerie fine, à deux pas de chez soi."},
+  "Boucherie":{emoji:"🥩",type:"Artisan",desc:"Viande maturée et conseils du boucher pour les découpes de qualité."},
+  "Poissonnerie":{emoji:"🐟",type:"Artisan",desc:"Poisson ultra-frais pour une cuisson plus fine."},
+  "Boulangerie":{emoji:"🥖",type:"Artisan",desc:"Pâte feuilletée pur beurre et pains frais."}
+};
+/* ing = [nom, quantité, magasin Malin, prix Malin, magasin Premium, prix Premium] */
+const R=[
+{id:"p1",cat:"poulet",emoji:"🍗",name:"Pilons croustillants au paprika",level:1,prep:10,cook:25,temp:200,serves:4,
+ desc:"Peau dorée, chair juteuse : le classique qui met tout le monde d’accord.",
+ ing:[["Pilons de poulet","8 pièces (≈ 1 kg)","Lidl",4.99,"Grand Frais",9.90],["Paprika fumé","1 c. à soupe","Aldi",1.29,"Biocoop",3.50],["Ail en poudre","1 c. à café","Leclerc",1.20,"Biocoop",3.20],["Fécule de maïs","1 c. à soupe","Carrefour",1.40,"Biocoop",2.50]],
+ steps:["Sèche bien les pilons avec du papier absorbant : c’est le secret d’une peau croustillante.","Mélange le paprika, l’ail, la fécule, 1 c. à café de sel et du poivre. Huile les pilons (1 c. à soupe), puis enrobe-les du mélange.","Préchauffe l’Air Fryer 3 minutes à 200 °C.","Dispose les pilons en une seule couche, sans qu’ils se touchent (2 fournées si besoin).","Cuis 25 minutes en les retournant à mi-cuisson.","Vérifie la cuisson : jus clair et 74 °C à cœur. Laisse reposer 3 minutes avant de servir."],
+ tip:"Pour une peau encore plus croustillante, termine par 2 minutes à 220 °C si ton appareil le permet."},
+{id:"p2",cat:"poulet",emoji:"🍗",name:"Nuggets maison",level:2,prep:20,cook:12,temp:190,serves:4,
+ desc:"Des nuggets croustillants, sans friture, que les enfants (et les grands) adorent.",
+ ing:[["Blanc de poulet","500 g","Lidl",5.50,"Boucherie",10.90],["Chapelure panko","100 g","Leclerc",1.80,"Monoprix",2.60],["Œufs","2","Carrefour",2.20,"Biocoop",3.50],["Farine de blé","3 c. à soupe","Aldi",0.90,"Biocoop",1.80],["Parmesan râpé","30 g","Aldi",1.50,"Grand Frais",3.20]],
+ steps:["Coupe le poulet en morceaux de 3 cm, sale et poivre.","Prépare 3 assiettes : la farine ; les œufs battus ; le panko mélangé au parmesan.","Passe chaque morceau dans la farine, puis l’œuf, puis la panure en appuyant bien.","Vaporise légèrement d’huile pour dorer.","Cuis 10 à 12 minutes à 190 °C en retournant à mi-cuisson, sans entasser (2 fournées si besoin).","Contrôle : 74 °C à cœur et panure bien dorée."],
+ tip:"Congèle les nuggets crus sur une plaque, puis en sachet : ajoute 3 minutes de cuisson, directement depuis le congélateur."},
+{id:"p3",cat:"poulet",emoji:"🍗",name:"Poulet façon Kentucky",level:3,prep:15,cook:30,temp:180,serves:4,extra:"+ 4 h de marinade au frigo",
+ desc:"Marinade au lait ribot, panure aux corn flakes : le grand frisson croustillant.",
+ ing:[["Cuisses de poulet","4 pièces (≈ 800 g)","Intermarché",5.80,"Grand Frais",9.50],["Lait ribot (ou babeurre)","25 cl","Carrefour",1.60,"Grand Frais",2.40],["Corn flakes nature","80 g","Lidl",1.70,"Biocoop",3.40],["Farine de blé","4 c. à soupe","Aldi",0.90,"Biocoop",1.80],["Mélange d’épices (paprika, ail, oignon, thym)","2 c. à soupe","Leclerc",2.20,"Biocoop",3.90]],
+ steps:["Mets les cuisses dans un saladier avec le lait ribot et 1 c. à café de sel. Couvre et laisse mariner 4 h au frigo (idéalement une nuit).","Écrase grossièrement les corn flakes dans un sac. Mélange-les avec la farine et les épices.","Égoutte les cuisses sans les essuyer, roule-les dans le mélange en appuyant fort pour que la panure adhère.","Laisse reposer 10 minutes : la panure se fixe.","Vaporise généreusement d’huile, surtout sur les zones blanches.","Cuis 25 minutes à 180 °C en retournant à mi-cuisson, puis 3 à 5 minutes à 200 °C pour la couleur.","Vérifie 74 °C minimum à cœur (les cuisses sont plus tendres vers 80 °C)."],
+ tip:"Pas de lait ribot ? Mélange 25 cl de lait et 1 c. à soupe de jus de citron, laisse reposer 10 minutes."},
+{id:"b1",cat:"boeuf",emoji:"🍔",name:"Burger bœuf-cheddar",level:1,prep:10,cook:10,temp:190,serves:2,
+ desc:"Un burger juteux prêt en 20 minutes, avec un steak parfaitement saisi.",
+ ing:[["Steaks hachés pur bœuf","2 × 125 g","Lidl",3.20,"Boucherie",6.80],["Pains burger brioché","2","Aldi",1.60,"Boulangerie",3.20],["Cheddar en tranches","2","Carrefour",1.90,"Grand Frais",3.90],["Salade et oignon rouge","au goût","Lidl",1.20,"Biocoop",2.20],["Sauce burger","2 c. à soupe","Leclerc",1.70,"Monoprix",3.20]],
+ steps:["Forme deux steaks plus larges que le pain (ils rétrécissent) et creuse le centre avec le pouce.","Sale et poivre juste avant la cuisson.","Cuis 8 à 10 minutes à 190 °C en retournant à mi-cuisson. Pose le cheddar sur les steaks pendant la dernière minute.","Toaste les pains ouverts 2 minutes à 180 °C.","Monte : sauce, salade, steak fondant, oignon rouge. Sers aussitôt."],
+ tip:"Envie de bacon ? Cuis-le 6 minutes à 200 °C avant les steaks."},
+{id:"b2",cat:"boeuf",emoji:"🍝",name:"Boulettes de bœuf sauce tomate",level:2,prep:20,cook:12,temp:190,serves:4,
+ desc:"Boulettes tendres et dorées, avec une sauce tomate express.",
+ ing:[["Bœuf haché 5 % MG","500 g","Leclerc",6.50,"Boucherie",10.50],["Passata de tomates","680 g","Lidl",1.10,"Monoprix",2.20],["Chapelure","4 c. à soupe","Carrefour",1.10,"Biocoop",2.40],["Œufs","1","Carrefour",2.20,"Biocoop",3.50],["Persil et ail frais","1 botte + 2 gousses","Lidl",1.40,"Grand Frais",2.30]],
+ steps:["Mélange le bœuf, le persil et 1 gousse d’ail hachés, la chapelure, l’œuf, 1 c. à café de sel et du poivre.","Forme 20 à 24 boulettes de 3 cm et laisse-les 10 minutes au frais pour qu’elles tiennent.","Cuis 10 à 12 minutes à 190 °C en secouant le panier à mi-cuisson.","Pendant ce temps, chauffe la passata avec l’autre gousse d’ail et du sel pendant 8 minutes dans une casserole.","Plonge les boulettes dans la sauce et sers avec des pâtes ou de la purée."],
+ tip:"Ajoute 1 c. à café de cumin ou de paprika dans la viande pour un goût plus marqué."},
+{id:"b3",cat:"boeuf",emoji:"🥩",name:"Entrecôte au beurre persillé",level:3,prep:15,cook:10,temp:200,serves:2,extra:"+ 30 min hors du frigo avant cuisson",
+ desc:"Une entrecôte rosée à cœur, croûte saisie, beurre persillé fondant.",
+ ing:[["Entrecôtes","2 × 250 g","Carrefour",9.90,"Boucherie",18.00],["Beurre demi-sel","50 g (plaquette)","Aldi",1.80,"Grand Frais",3.40],["Persil plat","1 botte","Lidl",0.99,"Grand Frais",1.60],["Échalote","1","Lidl",0.90,"Biocoop",1.60],["Citron jaune","1","Aldi",0.60,"Biocoop",1.20]],
+ steps:["Sors les entrecôtes du frigo 30 minutes avant : elles cuisent plus uniformément.","Prépare le beurre : mélange 50 g de beurre mou avec persil haché, échalote, un peu de jus de citron et du sel. Roule-le en boudin dans du film et place-le au frigo.","Préchauffe l’Air Fryer 5 minutes à 200 °C.","Sèche les viandes, huile-les légèrement, sale et poivre.","Cuis 8 minutes pour saignant, 10 minutes pour à point (épaisseur 2,5 cm), en retournant à mi-cuisson.","Laisse reposer 5 minutes sous du papier alu, puis dépose une rondelle de beurre persillé."],
+ tip:"Une sonde à viande est ton meilleur allié : environ 52 °C pour saignant, 57 °C pour à point."},
+{id:"b4",cat:"boeuf",emoji:"🐖",name:"Filet mignon moutarde-miel",level:2,prep:10,cook:25,temp:180,serves:4,
+ desc:"Un filet mignon fondant, glacé à la moutarde et au miel, avec ses grenailles.",
+ ing:[["Filet mignon de porc","450 g","Intermarché",6.50,"Boucherie",11.50],["Moutarde à l’ancienne","2 c. à soupe","Aldi",1.80,"Monoprix",3.20],["Miel","1 c. à soupe","Lidl",2.50,"Biocoop",5.50],["Herbes de Provence","1 c. à café","Leclerc",1.20,"Biocoop",2.60],["Pommes de terre grenaille","600 g","Lidl",2.00,"Grand Frais",3.20]],
+ steps:["Sors le filet du frigo 20 minutes avant la cuisson et sèche-le.","Mélange moutarde, miel, herbes de Provence, 1 c. à soupe d’huile, sel et poivre.","Coupe les grenailles en deux, enrobe-les d’huile et de sel. Badigeonne le filet de sauce.","Dépose le filet et les pommes de terre dans le panier.","Cuis 20 à 25 minutes à 180 °C en retournant à mi-cuisson.","Contrôle 63 °C à cœur, puis laisse reposer 5 minutes avant de trancher."],
+ tip:"Si ton panier est petit, coupe le filet en deux morceaux."},
+{id:"po1",cat:"poisson",emoji:"🐟",name:"Saumon laqué miel-soja",level:1,prep:10,cook:10,temp:200,serves:2,extra:"+ 15 min de marinade",
+ desc:"Laqué en 10 minutes : sucré-salé, fondant à l’intérieur, caramélisé dessus.",
+ ing:[["Pavés de saumon","2 pavés","Lidl",5.50,"Poissonnerie",9.50],["Sauce soja","1 c. à soupe","Carrefour",1.40,"Monoprix",3.50],["Miel","1 c. à soupe","Lidl",2.50,"Biocoop",5.50],["Gingembre frais","1 morceau","Aldi",0.80,"Biocoop",1.50],["Ail","1 gousse","Aldi",0.60,"Biocoop",1.20]],
+ steps:["Mélange la sauce soja, le miel, l’ail écrasé et le gingembre râpé.","Marine les pavés 15 minutes.","Dépose-les côté peau dessous dans le panier.","Cuis 8 à 10 minutes à 200 °C en badigeonnant de marinade à mi-cuisson.","Sers avec du riz et des légumes verts."],
+ tip:"Le saumon est prêt quand il s’émiette légèrement à la fourchette mais reste nacré au centre."},
+{id:"po2",cat:"poisson",emoji:"🍟",name:"Fish & chips croustillant",level:3,prep:25,cook:35,temp:190,serves:4,
+ desc:"Le plat de pub anglais, allégé : cabillaud croustillant et frites dorées.",
+ ing:[["Filets de cabillaud","4 filets (≈ 500 g)","Picard",7.90,"Poissonnerie",14.50],["Chapelure panko","100 g","Leclerc",1.80,"Monoprix",2.60],["Œufs","2","Carrefour",2.20,"Biocoop",3.50],["Farine de blé","3 c. à soupe","Aldi",0.90,"Biocoop",1.80],["Pommes de terre à frites","600 g","Lidl",1.60,"Grand Frais",2.80],["Sauce tartare","4 c. à soupe","Leclerc",1.90,"Monoprix",3.60]],
+ steps:["Coupe les pommes de terre en bâtonnets, plonge-les 20 minutes dans l’eau froide, puis sèche-les à fond.","Enrobe-les d’1 c. à soupe d’huile et de sel. Cuis 20 minutes à 200 °C en secouant 3 fois.","Pendant ce temps, sèche les filets, sale et poivre. Prépare 3 assiettes : farine, œufs battus, panko.","Passe les filets dans la farine, l’œuf, puis le panko en appuyant bien. Vaporise d’huile.","Retire les frites et garde-les au chaud. Cuis le poisson 10 à 12 minutes à 190 °C en le retournant délicatement.","Remets les frites 2 minutes à 200 °C pour les raviver. Sers avec la sauce tartare et du citron."],
+ tip:"Utilise du poisson bien décongelé et très sec : c’est la clé d’une panure qui accroche."},
+{id:"v1",cat:"vegetal",emoji:"🥦",name:"Chou-fleur croustillant façon buffalo",level:1,prep:15,cook:18,temp:200,serves:3,
+ desc:"Des bouquets croustillants glacés à la sauce piquante : le snack végétal star.",
+ ing:[["Chou-fleur","1 moyen","Lidl",1.99,"Biocoop",3.50],["Farine de blé","4 c. à soupe","Aldi",0.90,"Biocoop",1.80],["Lait d’avoine","10 cl","Carrefour",1.30,"Biocoop",2.10],["Sauce piquante type buffalo","4 c. à soupe","Aldi",1.90,"Carrefour",4.20],["Ail en poudre","1 c. à café","Leclerc",1.20,"Biocoop",3.20]],
+ steps:["Sépare le chou-fleur en bouquets réguliers.","Prépare la pâte : fouette la farine, le lait d’avoine, l’ail en poudre et 1/2 c. à café de sel.","Enrobe les bouquets de pâte et laisse-les s’égoutter.","Cuis 12 minutes à 200 °C en secouant à mi-cuisson.","Mélange la sauce piquante avec 1 c. à soupe d’huile et enrobe-en les bouquets.","Remets 5 à 6 minutes pour fixer la sauce. Sers avec une sauce yaourt ou ranch."],
+ tip:"Plus de piquant ? Ajoute une pincée de piment d’Espelette dans la sauce."},
+{id:"v2",cat:"vegetal",emoji:"🧆",name:"Falafels dorés",level:2,prep:20,cook:15,temp:190,serves:4,extra:"+ 15 min au frais",
+ desc:"Dorés dehors, moelleux dedans, parfumés à la coriandre et au cumin.",
+ ing:[["Pois chiches en conserve","400 g","Lidl",0.89,"Biocoop",1.90],["Coriandre fraîche","1 botte","Lidl",1.30,"Grand Frais",2.00],["Cumin moulu","2 c. à café","Aldi",1.20,"Biocoop",3.40],["Ail et citron","1 gousse + 1 citron","Aldi",1.20,"Biocoop",2.40],["Farine de blé","2 c. à soupe","Aldi",0.90,"Biocoop",1.80],["Pains pita","4","Lidl",1.20,"Boulangerie",2.50],["Yaourt grec","150 g","Aldi",1.80,"Grand Frais",3.20]],
+ steps:["Égoutte et sèche bien les pois chiches : l’humidité est l’ennemi de la tenue.","Mixe-les par impulsions avec l’ail, la coriandre, le cumin, la farine, du sel et du poivre. La texture doit rester grossière.","Forme 12 boulettes et laisse-les 15 minutes au frais.","Vaporise d’huile et cuis 15 minutes à 190 °C en les retournant à mi-cuisson.","Mélange le yaourt avec du jus de citron et du sel. Garnis les pitas : falafels, crudités, sauce."],
+ tip:"Ajoute 1 c. à café de graines de sésame dans la pâte pour plus de croquant."},
+{id:"v3",cat:"vegetal",emoji:"🥢",name:"Tofu croustillant au sésame",level:2,prep:10,cook:18,temp:200,serves:2,extra:"+ 15 min de pressage",
+ desc:"Des cubes ultra-croustillants, enrobés de sésame, avec sauce sweet chili.",
+ ing:[["Tofu ferme","400 g","Lidl",1.99,"Biocoop",3.50],["Sauce soja","1 c. à soupe","Carrefour",1.40,"Monoprix",3.50],["Graines de sésame","2 c. à soupe","Leclerc",1.50,"Biocoop",3.20],["Fécule de maïs","1 c. à soupe","Carrefour",1.40,"Biocoop",2.50],["Sauce sweet chili","4 c. à soupe","Aldi",1.90,"Monoprix",3.40]],
+ steps:["Presse le tofu 15 minutes entre du papier absorbant sous un poids, puis coupe-le en cubes de 2 cm.","Mélange le tofu avec la sauce soja, la fécule et les graines de sésame.","Vaporise d’huile.","Cuis 15 à 18 minutes à 200 °C en secouant le panier 2 fois.","Sers avec la sauce sweet chili, du riz et des légumes."],
+ tip:"Un tofu bien pressé, c’est un tofu bien croustillant."},
+{id:"v4",cat:"vegetal",emoji:"🍠",name:"Frites de patate douce",level:1,prep:10,cook:18,temp:200,serves:2,
+ desc:"Le duo sucré-salé : croustillantes dehors, fondantes dedans.",
+ ing:[["Patates douces","600 g","Lidl",2.20,"Grand Frais",3.60],["Huile d’olive","1 c. à soupe","Aldi",3.90,"Monoprix",7.90],["Paprika fumé","1 c. à café","Aldi",1.29,"Biocoop",3.50],["Fécule de maïs","1 c. à soupe","Carrefour",1.40,"Biocoop",2.50],["Yaourt grec","150 g","Aldi",1.80,"Grand Frais",3.20]],
+ steps:["Coupe les patates douces en bâtonnets réguliers, plonge-les 15 minutes dans l’eau froide, puis sèche-les.","Mélange-les avec la fécule, l’huile d’olive, le paprika et du sel.","Dispose-les en une seule couche dans le panier.","Cuis 16 à 18 minutes à 200 °C en secouant 2 fois.","Sers avec le yaourt grec salé et poivré."],
+ tip:"Elles croustillent en refroidissant 2 minutes : patience !"},
+{id:"d1",cat:"dessert",emoji:"🍪",name:"Cookies aux pépites de chocolat",level:1,prep:15,cook:18,temp:170,serves:6,
+ desc:"Croustillants sur les bords, tendres au centre, prêts en 9 minutes par fournée.",
+ ing:[["Farine de blé","150 g","Aldi",0.90,"Biocoop",1.80],["Beurre doux","100 g","Aldi",1.80,"Grand Frais",3.40],["Sucre roux (cassonade)","100 g","Carrefour",1.40,"Biocoop",2.50],["Pépites de chocolat","100 g","Lidl",1.60,"Monoprix",3.20],["Œuf","1","Carrefour",2.20,"Biocoop",3.50]],
+ steps:["Travaille le beurre mou avec le sucre roux jusqu’à obtenir une crème.","Ajoute l’œuf, puis la farine et une pincée de sel. Incorpore les pépites.","Forme 6 à 7 boules de 60 g, espacées de 4 cm sur du papier cuisson spécial friteuse (perforé). Aplatis légèrement.","Cuis 8 à 9 minutes à 170 °C, en 2 fournées : le centre doit rester un peu mou.","Laisse reposer 5 minutes avant de décoller."],
+ tip:"Ne préchauffe pas avec du papier seul : il peut se soulever. Pose-le avec les cookies dessus."},
+{id:"d2",cat:"dessert",emoji:"🍎",name:"Pommes au four, croquant d’avoine",level:1,prep:10,cook:18,temp:180,serves:4,
+ desc:"Le dessert réconfort : pommes fondantes, croquant d’avoine et cannelle.",
+ ing:[["Pommes","4","Lidl",1.99,"Grand Frais",3.40],["Flocons d’avoine","4 c. à soupe","Aldi",0.90,"Biocoop",2.10],["Beurre doux","20 g","Aldi",1.80,"Grand Frais",3.40],["Cannelle moulue","1 c. à café","Leclerc",1.50,"Biocoop",3.60],["Sucre roux","2 c. à soupe","Carrefour",1.40,"Biocoop",2.50]],
+ steps:["Évide les pommes sans percer le fond.","Mélange les flocons d’avoine, le beurre mou, le sucre et la cannelle.","Garnis les pommes de ce mélange.","Cuis 18 minutes à 180 °C : elles doivent être tendres à la pointe du couteau.","Sers tièdes avec du yaourt ou une boule de glace."],
+ tip:"Choisis des pommes qui tiennent à la cuisson : Boskoop, Reine des reinettes ou Gala."},
+{id:"d3",cat:"dessert",emoji:"🍫",name:"Brownie fondant",level:2,prep:15,cook:22,temp:160,serves:6,
+ desc:"Croûte craquante, cœur dense et fondant : le brownie des gourmands.",
+ ing:[["Chocolat noir pâtissier","150 g","Leclerc",2.40,"Monoprix",4.80],["Beurre doux","100 g","Aldi",1.80,"Grand Frais",3.40],["Œufs","2","Carrefour",2.20,"Biocoop",3.50],["Sucre roux","100 g","Carrefour",1.40,"Biocoop",2.50],["Farine de blé","50 g","Aldi",0.90,"Biocoop",1.80],["Noix de pécan","40 g","Lidl",2.50,"Monoprix",4.20]],
+ steps:["Fais fondre le chocolat et le beurre (micro-ondes, 30 secondes à la fois en mélangeant).","Fouette les œufs avec le sucre pendant 2 minutes, jusqu’à ce que le mélange blanchisse.","Ajoute le chocolat fondu, puis la farine et les noix de pécan concassées.","Verse dans un moule de 16 cm qui rentre dans ton panier, beurré et chemisé de papier cuisson.","Cuis 20 à 22 minutes à 160 °C : la lame du couteau doit ressortir humide, pas liquide.","Laisse refroidir 20 minutes avant de démouler."],
+ tip:"Le brownie finit de cuire en refroidissant : sors-le avant d’avoir l’impression qu’il est prêt."},
+{id:"d4",cat:"dessert",emoji:"🥐",name:"Chaussons aux pommes",level:2,prep:15,cook:15,temp:180,serves:4,
+ desc:"Feuilletage doré et gonflé, cœur de compote tiède à la cannelle.",
+ ing:[["Pâte feuilletée pur beurre","1 rouleau","Carrefour",1.60,"Boulangerie",3.20],["Compote de pommes sans sucres ajoutés","4 c. à soupe","Lidl",1.40,"Biocoop",2.50],["Cannelle moulue","1 c. à café","Leclerc",1.50,"Biocoop",3.60],["Œuf (dorure)","1","Carrefour",2.20,"Biocoop",3.50]],
+ steps:["Déroule la pâte et découpe 4 rectangles.","Garnis une moitié de compote mélangée à la cannelle, en laissant 1 cm de bord.","Replie, soude les bords à la fourchette, dore à l’œuf battu et strie le dessus.","Cuis 12 à 15 minutes à 180 °C : ils gonflent et dorent. Surveille les dernières minutes.","Laisse tiédir 5 minutes avant de déguster."],
+ tip:"Pose-les sur du papier perforé et ne les entasse pas : le feuilletage a besoin d’air pour gonfler."},
+{id:"d5",cat:"dessert",emoji:"🍰",name:"Fondant au chocolat cœur coulant",level:3,prep:15,cook:9,temp:180,serves:2,
+ desc:"Le grand classique des restaurants : le cœur coule, la croûte tient.",
+ ing:[["Chocolat noir pâtissier","100 g","Leclerc",2.40,"Monoprix",4.80],["Beurre doux","50 g","Aldi",1.80,"Grand Frais",3.40],["Œufs","2","Carrefour",2.20,"Biocoop",3.50],["Sucre en poudre","40 g","Carrefour",1.20,"Biocoop",2.40],["Farine de blé","1 c. à soupe","Aldi",0.90,"Biocoop",1.80]],
+ steps:["Beurre et sucre 2 ramequins (le sucre aide le démoulage).","Fais fondre le chocolat avec le beurre.","Fouette les œufs avec le sucre, ajoute le chocolat, puis la farine.","Verse dans les ramequins (aux 3/4) et, si possible, laisse 30 minutes au frais.","Cuis 8 à 9 minutes à 180 °C : les bords sont pris, le centre tremble.","Laisse reposer 1 minute, puis démoule d’un geste franc sur l’assiette."],
+ tip:"Fais un premier test : 30 secondes de trop et le cœur disparaît !"},
+{id:"d6",cat:"dessert",emoji:"🧁",name:"Mini cheesecake basque",level:3,prep:10,cook:20,temp:180,serves:2,extra:"+ 4 h de repos (1 h dehors, 3 h au frigo)",
+ desc:"Dessus caramélisé, cœur crémeux : la version mini, réussie à tous les coups.",
+ ing:[["Fromage frais type Philadelphia","200 g","Carrefour",2.30,"Grand Frais",4.50],["Crème liquide entière","10 cl","Lidl",1.10,"Grand Frais",2.20],["Œufs","2","Carrefour",2.20,"Biocoop",3.50],["Sucre en poudre","50 g","Carrefour",1.20,"Biocoop",2.40],["Fécule de maïs","1 c. à soupe","Carrefour",1.40,"Biocoop",2.50]],
+ steps:["Fouette le fromage frais, le sucre, les œufs, la crème et la fécule jusqu’à obtenir une préparation lisse.","Verse dans 2 ramequins (ou un moule de 12 cm chemisé de papier).","Cuis 18 à 20 minutes à 180 °C : dessus bien doré, centre qui tremble.","Laisse refroidir 1 heure à température ambiante, puis 3 heures au frigo pour que la texture se fige."],
+ tip:"Le dessus très foncé est voulu : c’est la signature du style « basque »."}
+];
+/*DATA_END*/
+
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const eur=new Intl.NumberFormat("fr-FR",{style:"currency",currency:"EUR"});
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+const byId=Object.fromEntries(R.map(r=>[r.id,r]));
+const reduce=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const store={
+  get(k,d){try{const v=localStorage.getItem("ca_"+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem("ca_"+k,JSON.stringify(v))}catch(e){}}
+};
+const state={
+  cat:"all",level:0,q:"",fav:false,current:null,
+  tier:store.get("tier","m")==="p"?"p":"m",
+  favs:new Set(store.get("favs",[]).filter(id=>byId[id])),
+  list:store.get("list",[]).filter(id=>byId[id]),
+  checked:new Set(store.get("checked",[]))
+};
+const pick=(i,t=state.tier)=>t==="m"?{store:i[2],price:i[3]}:{store:i[4],price:i[5]};
+const total=(r,t=state.tier)=>r.ing.reduce((s,i)=>s+pick(i,t).price,0);
+const catOf=id=>CATS.find(c=>c.id===id);
+
+/* ---------- Toast ---------- */
+let toastTimer;
+function toast(msg){
+  const el=$("#toast");
+  el.textContent=msg;el.hidden=false;
+  try{if(el.hidePopover){try{el.hidePopover()}catch(e){}el.showPopover()}}catch(e){}
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>{try{if(el.hidePopover)el.hidePopover()}catch(e){}el.hidden=true},2200);
+}
+async function copy(text){
+  try{await navigator.clipboard.writeText(text);return true}catch(e){}
+  try{const t=document.createElement("textarea");t.value=text;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();const ok=document.execCommand("copy");t.remove();return ok}catch(e){return false}
+}
+
+/* ---------- Rendu : filtres et grille ---------- */
+function renderChips(){
+  const items=[{id:"all",label:"Toutes",emoji:"✨"}].concat(CATS);
+  $("#catChips").innerHTML=items.map(c=>`<button class="chip" type="button" data-chip="${c.id}" aria-pressed="${state.cat===c.id}">${c.emoji} ${esc(c.label)}</button>`).join("");
+}
+function syncControls(){
+  $$("[data-level]").forEach(b=>b.setAttribute("aria-pressed",String(+b.dataset.level===state.level)));
+  $$("[data-tier]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.tier===state.tier)));
+  $("#favToggle").setAttribute("aria-pressed",String(state.fav));
+}
+function filtered(){
+  const q=norm(state.q.trim());
+  return R.filter(r=>
+    (state.cat==="all"||r.cat===state.cat)&&
+    (!state.level||r.level===state.level)&&
+    (!state.fav||state.favs.has(r.id))&&
+    (!q||norm([r.name,r.desc,r.ing.map(i=>i[0]).join(" ")].join(" ")).includes(q))
+  );
+}
+function cardHTML(r){
+  const t=total(r),fav=state.favs.has(r.id),cat=catOf(r.cat);
+  return `<article class="card">
+    <div class="vis" data-cat="${r.cat}" aria-hidden="true"><span class="em">${r.emoji}</span><span class="badge lv${r.level}"><i></i>${LEVELS[r.level]}</span></div>
+    <button class="fav" type="button" data-fav="${r.id}" aria-pressed="${fav}" aria-label="${fav?"Retirer des favoris":"Ajouter aux favoris"} : ${esc(r.name)}">${fav?"♥":"♡"}</button>
+    <div class="body">
+      <span class="catlabel">${cat.emoji} ${esc(cat.label)}</span>
+      <h3><button class="title-btn" type="button" data-open="${r.id}">${esc(r.name)}</button></h3>
+      <p>${esc(r.desc)}</p>
+      <div class="meta"><span>⏱ ${r.prep+r.cook} min</span><span>🌡 ${r.temp} °C</span><span>👥 ${r.serves} pers.</span></div>
+      <div class="price">≈ ${eur.format(t)} <small>· ${eur.format(t/r.serves)} / pers.</small></div>
+    </div></article>`;
+}
+function renderGrid(){
+  const list=filtered();
+  $("#count").textContent=`${list.length} recette${list.length>1?"s":""}`;
+  $("#grid").innerHTML=list.length?list.map(cardHTML).join(""):
+    `<div class="empty" style="grid-column:1/-1"><div class="big" aria-hidden="true">🍳</div><h3>Aucune recette trouvée</h3><p>Essaie un autre mot ou retire un filtre.</p><p style="margin-top:1rem"><button class="btn btn-primary" type="button" id="resetFilters">Réinitialiser les filtres</button></p></div>`;
+}
+function renderStores(){
+  const counts={};
+  R.forEach(r=>r.ing.forEach(i=>new Set([i[2],i[4]]).forEach(s=>{counts[s]=(counts[s]||0)+1})));
+  $("#storeGrid").innerHTML=Object.entries(STORES).map(([name,s])=>`<article class="store-card"><div class="store-top"><span class="store-ico" aria-hidden="true">${s.emoji}</span><div><h3>${esc(name)}</h3><span class="tag">${esc(s.type)}</span></div></div><p>${esc(s.desc)}</p><p class="store-count">${counts[name]||0} produit${(counts[name]||0)>1?"s":""} dans nos recettes</p></article>`).join("");
+}
+
+/* ---------- Fiche recette ---------- */
+function tierSeg(label){
+  return `<div class="ctl"><span class="ctl-label">${label}</span><div class="seg" role="group" aria-label="${label}"><button type="button" data-tier="m" aria-pressed="${state.tier==="m"}">💸 Malin</button><button type="button" data-tier="p" aria-pressed="${state.tier==="p"}">⭐ Premium</button></div></div>`;
+}
+function renderSheet(keepScroll){
+  const r=byId[state.current];if(!r)return;
+  const d=$("#sheet"),y=d.scrollTop,t=total(r),cat=catOf(r.cat),inList=state.list.includes(r.id),fav=state.favs.has(r.id);
+  $("#sheetInner").innerHTML=`
+  <button class="close" type="button" data-close aria-label="Fermer la recette">✕</button>
+  <div class="sheet-vis" data-cat="${r.cat}" aria-hidden="true"><span>${r.emoji}</span></div>
+  <div class="sheet-body">
+    <div>
+      <div class="tags"><span class="badge lv${r.level}" style="background:var(--surface2)"><i></i>${LEVELS[r.level]}</span><span class="tag">${cat.emoji} ${esc(cat.label)}</span></div>
+      <h2 id="sheetTitle">${esc(r.name)}</h2>
+      <p class="lead">${esc(r.desc)}</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><small>Préparation</small><b>${r.prep} min</b></div>
+      <div class="fact"><small>Cuisson</small><b>${r.cook} min</b></div>
+      <div class="fact"><small>Température</small><b>${r.temp} °C</b></div>
+      <div class="fact"><small>Portions</small><b>${r.serves} pers.</b></div>
+    </div>
+    ${r.extra?`<p class="note">⏳ ${esc(r.extra)}</p>`:""}
+    <div>
+      <div class="sec-title"><h3>Ingrédients et où les acheter</h3>${tierSeg("Gamme")}</div>
+      <ul class="ing-list">${r.ing.map(i=>{const p=pick(i);return `<li class="ing"><div><b>${esc(i[0])}</b><small>${esc(i[1])}</small></div><div class="where">${STORES[p.store]?STORES[p.store].emoji+" ":""}${esc(p.store)}<small>${eur.format(p.price)}</small></div></li>`}).join("")}</ul>
+      <p class="total">Budget courses : <b>≈ ${eur.format(t)}</b> <small>soit ≈ ${eur.format(t/r.serves)} par personne. Prix du produit entier (paquet, boîte…), pas seulement de la quantité utilisée.</small></p>
+    </div>
+    <div><h3 class="sec-title">Préparation</h3><ol class="steps">${r.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol></div>
+    <div class="tip"><b>💡 Le conseil :</b> ${esc(r.tip)}</div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-primary" type="button" data-listadd="${r.id}" aria-pressed="${inList}">${inList?"✓ Dans ma liste":"🛒 Ajouter à ma liste"}</button>
+    <button class="btn" type="button" data-fav="${r.id}" aria-pressed="${fav}">${fav?"♥ Favori":"♡ Favori"}</button>
+    <button class="btn" type="button" data-share="${r.id}">🔗 Partager</button>
+  </div>`;
+  if(keepScroll)d.scrollTop=y;
+}
+function openRecipe(id,push){
+  if(!byId[id])return;
+  state.current=id;renderSheet(false);
+  const d=$("#sheet");if(!d.open)d.showModal();
+  d.scrollTop=0;lock();
+  if(push!==false){try{history.replaceState(null,"","#recette-"+id)}catch(e){}}
+}
+function lock(){document.documentElement.style.overflow=$$("dialog[open]").length?"hidden":""}
+async function share(id){
+  const r=byId[id],url=location.href.split("#")[0]+"#recette-"+id;
+  const data={title:r.name+" – CroustiAir",text:r.name+" à l’Air Fryer : "+r.desc,url};
+  try{if(navigator.share){await navigator.share(data);return}}catch(e){if(e&&e.name==="AbortError")return}
+  toast((await copy(url))?"Lien copié ✓":"Copie impossible");
+}
+
+/* ---------- Favoris & liste ---------- */
+function toggleFav(id){
+  if(state.favs.has(id)){state.favs.delete(id);toast("Retiré des favoris")}else{state.favs.add(id);toast("Ajouté aux favoris ♥")}
+  store.set("favs",[...state.favs]);
+  renderGrid();
+  if($("#sheet").open&&state.current===id)renderSheet(true);
+}
+function updateCount(){$("#listCount").textContent=state.list.length}
+function toggleList(id){
+  const i=state.list.indexOf(id);
+  if(i>-1){state.list.splice(i,1);toast("Retiré de ta liste")}else{state.list.push(id);toast("Ajouté à ta liste 🛒")}
+  store.set("list",state.list);updateCount();
+  if($("#sheet").open&&state.current===id){renderSheet(true);const b=$("[data-listadd]");if(b)b.focus()}
+  if($("#listDlg").open)renderList();
+}
+function listGroups(){
+  const groups=new Map();let sum=0;
+  state.list.forEach(id=>{const r=byId[id];r.ing.forEach((ing,i)=>{
+    const p=pick(ing);sum+=p.price;
+    if(!groups.has(p.store))groups.set(p.store,[]);
+    groups.get(p.store).push({key:id+":"+i,name:ing[0],qty:ing[1],price:p.price,recipe:r.name});
+  })});
+  return {groups:[...groups.entries()].sort((a,b)=>a[0].localeCompare(b[0],"fr")),sum};
+}
+function renderList(){
+  const body=$("#listBody"),foot=$("#listFoot");
+  if(!state.list.length){
+    foot.hidden=true;
+    body.innerHTML=`<div class="empty"><div class="big" aria-hidden="true">🛒</div><h3>Ta liste est vide</h3><p>Ouvre une recette et appuie sur « Ajouter à ma liste » : tes courses seront classées par magasin.</p></div>`;
+    return;
+  }
+  foot.hidden=false;
+  const {groups,sum}=listGroups();
+  body.innerHTML=`<div class="pills">${state.list.map(id=>`<span class="pill">${byId[id].emoji} ${esc(byId[id].name)} <button type="button" data-rm="${id}" aria-label="Retirer ${esc(byId[id].name)}">✕</button></span>`).join("")}</div>`+
+  groups.map(([s,items])=>`<section class="store-group"><h3><span>${STORES[s]?STORES[s].emoji:"🛒"} ${esc(s)}</span><small>${eur.format(items.reduce((a,b)=>a+b.price,0))}</small></h3><ul>${items.map(it=>{const c=state.checked.has(it.key);return `<li class="${c?"done":""}"><label><input type="checkbox" data-check="${it.key}" ${c?"checked":""}><span><b>${esc(it.name)}</b><small>${esc(it.qty)} · ${esc(it.recipe)}</small></span></label><span>${eur.format(it.price)}</span></li>`}).join("")}</ul></section>`).join("");
+  $("#listTotal").textContent=eur.format(sum);
+}
+function listText(){
+  const {groups,sum}=listGroups();
+  return "Ma liste de courses CroustiAir\n\n"+groups.map(([s,items])=>s+"\n"+items.map(it=>`- ${it.name} (${it.qty}) – ${eur.format(it.price)}`).join("\n")).join("\n\n")+`\n\nTotal estimé : ${eur.format(sum)}`;
+}
+
+/* ---------- Installation ---------- */
+let deferred=null;
+const standalone=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+const ua=navigator.userAgent||"";
+const OS=(/iphone|ipad|ipod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1))?"ios":/android/i.test(ua)?"android":"desktop";
+function updateInstallUI(){
+  const inst=standalone();
+  $$("[data-install]").forEach(b=>{b.hidden=inst});
+  $("#installedMsg").hidden=!inst;
+  $$(".install-card").forEach(c=>c.classList.toggle("mine",c.dataset.os===OS));
+}
+async function install(){
+  if(deferred){
+    deferred.prompt();
+    try{await deferred.userChoice}catch(e){}
+    deferred=null;return;
+  }
+  $("#installer").scrollIntoView({behavior:reduce()?"auto":"smooth"});
+  toast(OS==="ios"?"Sur iPhone : Partager, puis « Sur l’écran d’accueil »":"Suis les étapes ci-dessous pour installer l’appli");
+}
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e});
+window.addEventListener("appinstalled",()=>{deferred=null;updateInstallUI();toast("Appli installée 🎉")});
+
+/* ---------- Événements ---------- */
+function setTier(t){
+  state.tier=t;store.set("tier",t);syncControls();renderGrid();
+  if($("#sheet").open){renderSheet(true);const b=$('#sheet [data-tier="'+t+'"]');if(b)b.focus()}
+  if($("#listDlg").open){renderList();syncControls()}
+}
+document.addEventListener("click",e=>{
+  const t=e.target;
+  const q=sel=>t.closest(sel);
+  let el;
+  if((el=q("[data-open]")))return openRecipe(el.dataset.open);
+  if((el=q("[data-fav]")))return toggleFav(el.dataset.fav);
+  if((el=q("[data-chip]"))){state.cat=el.dataset.chip;renderChips();renderGrid();return}
+  if((el=q("[data-level]"))){state.level=+el.dataset.level;syncControls();renderGrid();return}
+  if((el=q("[data-tier]")))return setTier(el.dataset.tier);
+  if(q("#favToggle")){state.fav=!state.fav;syncControls();renderGrid();return}
+  if(q("#resetFilters")){state.cat="all";state.level=0;state.q="";state.fav=false;$("#q").value="";renderChips();syncControls();renderGrid();return}
+  if((el=q("[data-listadd]")))return toggleList(el.dataset.listadd);
+  if((el=q("[data-share]")))return share(el.dataset.share);
+  if((el=q("[data-rm]")))return toggleList(el.dataset.rm);
+  if(q("[data-install]"))return install();
+  if(q("[data-close]")){const d=q("dialog");if(d)d.close();return}
+  if(q("#listBtn")){renderList();syncControls();$("#listDlg").showModal();$("#listDlg").scrollTop=0;lock();return}
+  if(q("#clearList")){if(confirm("Vider toute la liste de courses ?")){state.list=[];state.checked=new Set();store.set("list",[]);store.set("checked",[]);updateCount();renderList();toast("Liste vidée")}return}
+  if(q("#copyList")){copy(listText()).then(ok=>toast(ok?"Liste copiée ✓":"Copie impossible"));return}
+});
+document.addEventListener("change",e=>{
+  const c=e.target.closest("[data-check]");
+  if(!c)return;
+  if(c.checked)state.checked.add(c.dataset.check);else state.checked.delete(c.dataset.check);
+  store.set("checked",[...state.checked]);
+  c.closest("li").classList.toggle("done",c.checked);
+});
+$("#q").addEventListener("input",e=>{state.q=e.target.value;renderGrid()});
+$$("dialog").forEach(d=>{
+  d.addEventListener("click",e=>{if(e.target===d)d.close()});
+  d.addEventListener("close",()=>{
+    lock();
+    if(d.id==="sheet"){try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}}
+  });
+});
+
+/* ---------- Démarrage ---------- */
+$("#statRecipes").textContent=R.length;
+renderChips();syncControls();renderGrid();renderStores();updateCount();updateInstallUI();
+const m=location.hash.match(/^#recette-([a-z0-9]+)$/);
+if(m&&byId[m[1]])openRecipe(m[1],false);
+
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){
+  window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})});
+}
+})();
+</script>
+</body>
+</html>

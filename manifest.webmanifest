@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "CroustiAir – Recettes Air Fryer",
+  "short_name": "CroustiAir",
+  "description": "Recettes Air Fryer pour tous les niveaux, avec les magasins où acheter et les prix.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff8f0",
+  "theme_color": "#d9480f",
+  "categories": ["food", "lifestyle"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
